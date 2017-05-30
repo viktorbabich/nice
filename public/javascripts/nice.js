@@ -52,15 +52,9 @@
 // $("#askButton").on("click", app.load());
 
 $(document).ready(function() {
-	var question = $("#question input")[0].value;
-	document.addEventListener("keydown", function(event) {
-		if(event.keyCode == 13 || event.keyCode == 32) {
-			// преобразовать в запрос
-			// "http://lmgtfy.com/?q=" + question; 
-		};
-	});
 
-	function beforeAsk(event) {
+
+	function beforeAsk() {
 		var phrases,
 				phrase,
 				rand,
@@ -72,15 +66,47 @@ $(document).ready(function() {
     	rand = Math.round(rand);
     	phrase = phrases[rand];
     	$(".c-talk")[0].textContent = phrase;
-		}
+		};
     interval = setInterval(sayPhrase, 3000); 
-		document.addEventListener("keydown", function(event) {
+    function listener(event) {
 			if(event.keyCode == 13 || event.keyCode == 32) {
 				clearInterval(interval);
+				document.removeEventListener("keydown", listener);
+				// app.turn();
 			}
-		});
+		};
+		document.addEventListener("keydown", listener);
 	};
-	beforeAsk();
+
+	function turn() {
+		var rand,
+				flag;
+		flag = true;
+		rand = -0.5 + Math.random() * 2;
+		rand = Math.round(rand);
+		if(rand === 1 && flag === true) {
+			alert("no");
+			flag = false;
+			// app.turn();
+		} else {
+			alert("yes")
+			// реально turn
+		};
+	};
+
+	function ask() {
+		// повляется попап
+		var question = $("#question input")[0].value;
+		кнопка.on("click", function() {
+
+				joke.showTable();
+
+				// преобразовать в запрос
+				// "http://lmgtfy.com/?q=" + question; 
+
+		}); 
+	};
+
 });
 
 
