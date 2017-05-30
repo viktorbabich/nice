@@ -53,19 +53,18 @@
 
 $(document).ready(function() {
 
-
 	function beforeAsk() {
 		var phrases,
-				phrase,
-				rand,
-				interval;
+			phrase,
+			rand,
+			interval;
 		phrases = ["one", "two", "three"];
 
 		function sayPhrase() {
 			rand =  -0.5 + Math.random() * (phrases.length);
-    	rand = Math.round(rand);
-    	phrase = phrases[rand];
-    	$(".c-talk")[0].textContent = phrase;
+	    	rand = Math.round(rand);
+	    	phrase = phrases[rand];
+	    	$(".c-talk")[0].textContent = phrase;
 		};
     interval = setInterval(sayPhrase, 3000); 
     function listener(event) {
@@ -73,40 +72,47 @@ $(document).ready(function() {
 				clearInterval(interval);
 				document.removeEventListener("keydown", listener);
 				// app.turn();
+				// здесь рандом на поворот
+				// app.ask();
 			}
 		};
 		document.addEventListener("keydown", listener);
 	};
 
 	function turn() {
-		var rand,
-				flag;
-		flag = true;
-		rand = -0.5 + Math.random() * 2;
-		rand = Math.round(rand);
-		if(rand === 1 && flag === true) {
-			alert("no");
-			flag = false;
-			// app.turn();
-		} else {
-			alert("yes")
-			// реально turn
-		};
+		// var rand,
+		// 	flag;
+		// rand = -0.5 + Math.random() * 2;
+		// rand = Math.round(rand);
+		// if(rand === 1) {
+		// 	console.log("no", flag, rand);
+		// 	// app.turn();
+		// } else {
+		// 	console.log("yes", flag, rand);
+		// 	// реально turn
+		// };
+
+		// передать turned или нет
+
 	};
 
-	function ask() {
-		// повляется попап
-		var question = $("#question input")[0].value;
-		кнопка.on("click", function() {
+	function ask(turned) {
+		// он спрашивает
+		// повляется попап с инпутом
 
-				joke.showTable();
+		// задаешь вопрос
+
+		if(turned) {
+			joke.showTable();
+		} else app.turn();
+
+		var question = $("#question input")[0].value;
 
 				// преобразовать в запрос
 				// "http://lmgtfy.com/?q=" + question; 
 
 		}); 
 	};
-
 });
 
 

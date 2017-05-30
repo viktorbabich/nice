@@ -23,3 +23,40 @@
 .c-talk {
 	width: 200px;
 }
+table {
+	width: 560px;
+	background: transparent;
+	text-align: center;
+	font-family: Arial, sans-serif;
+	font-weight: 400;
+	font-size: 20px;
+	color: #f7fcc4;
+	tr {
+		border-bottom: 1px solid #f4fcff;
+		&:last-child {
+			border-bottom: none;
+		}
+		td {
+			border-right: 1px solid #f4fcff;
+			padding: 20px 0;
+			width: 70px;
+			&:last-child {
+				border-right: none;
+			}
+		}
+	}
+}
+.c-table {
+	background: radial-gradient(circle, #1822db, #020860);
+	margin: 0 auto;
+	border: 20px solid #011425;
+	width: 600px;
+	&__word {
+		width: 210px;
+	}
+	&__joke {
+		display: none;
+		background: transparent;
+		text-align: center;
+	}
+}

@@ -1082,3 +1082,40 @@ body {
 .c-talk {
   width: 200px;
 }
+table {
+  width: 560px;
+  background: transparent;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: #f7fcc4;
+}
+table tr {
+  border-bottom: 1px solid #f4fcff;
+}
+table tr:last-child {
+  border-bottom: none;
+}
+table tr td {
+  border-right: 1px solid #f4fcff;
+  padding: 20px 0;
+  width: 70px;
+}
+table tr td:last-child {
+  border-right: none;
+}
+.c-table {
+  background: radial-gradient(circle, #1822db, #020860);
+  margin: 0 auto;
+  border: 20px solid #011425;
+  width: 600px;
+}
+.c-table__word {
+  width: 210px;
+}
+.c-table__joke {
+  display: none;
+  background: transparent;
+  text-align: center;
+}
