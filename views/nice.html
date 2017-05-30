@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Nice</title>
+	<link rel="stylesheet" type="text/css" href="../stylesheets/nice.css">
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="../javascripts/nice.js"></script>
+</head>
+<body>
+<div class="c-container">
+	<form id="question">
+		<input type="text" value="sadas">
+	</form>
+	<div class="c-talk"></div>
+</div>
+{%- if not isExport and _env == 'development'%}
+  {% include "blocks/__add_component.html" %}
+  <!-- include liveReload only in Dev server -->
+  <script src="//localhost:35729/livereload.js"></script>
+{%- endif %}	
+</body>
+</html>
