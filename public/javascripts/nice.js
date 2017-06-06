@@ -4,31 +4,6 @@ $(document).ready(function() {
 		$(".question").fadeIn(200);
 	});
 
-	// рандомые фразы перед тем как начать диалог
-
-	interval = setInterval(sayPhrase, 3000); 
-	function listener(event) {
-		if(event.keyCode == 13 || event.keyCode == 32) {
-			clearInterval(interval);
-			document.removeEventListener("keydown", listener);
-			// app.turn();
-		};
-	};
-	document.addEventListener("keydown", listener);
-
-	function sayPhrase() {
-		var phrases,
-			phrase,
-			rand,
-			interval;
-		phrases = ["one", "two", "three"];
-		rand =  -0.5 + Math.random() * (phrases.length);
-    	rand = Math.round(rand);
-    	phrase = phrases[rand];
-    	$(".talk")[0].textContent = phrase;
-    	// тут должно всплывать облако с фразой и исчезать
-	};
-
 // 	function turn() {
 // 		// поворачивается
 // 		// IDdialog1 = "Что такое?"

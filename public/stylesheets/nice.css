@@ -1178,3 +1178,14 @@ table tr td:last-child {
   background: yellow;
   display: none;
 }
+.talk {
+  position: relative;
+  height: 40px;
+  width: 100px;
+}
+.talk__phrase {
+  display: none;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+}
